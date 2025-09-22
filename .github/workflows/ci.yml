@@ -1,0 +1,11 @@
+name: CI
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify repository contents
+        run: |
+          echo "COMP3104 Exercise 03 CI check"
+          ls -la

@@ -1,0 +1,5 @@
+# Optional: Use this only if you activate Travis CI for the repo.
+# A minimal config that simply runs a script.
+language: minimal
+script:
+  - echo "Travis CI check for COMP3104 Exercise 03"
