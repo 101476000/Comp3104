@@ -1,5 +1,11 @@
-# Optional: Use this only if you activate Travis CI for the repo.
-# A minimal config that simply runs a script.
-language: minimal
-script:
-  - echo "Travis CI check for COMP3104 Exercise 03"
+language: node_js
+node_js:
+  - "stable"
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $github_token
+  local_dir: build
+  on:
+    branch: main

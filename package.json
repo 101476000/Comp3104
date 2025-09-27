@@ -1,0 +1,20 @@
+{
+  "name": "comp3104",
+  "version": "1.0.0",
+  "description": "This starter gives you a minimal repository structure so you can complete Exercise 03 quickly using **GitHub Actions** (no credit card needed).",
+  "main": "index.js",
+  "scripts": {
+  "test": "echo \"Warning: No tests created yet.\""
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/101476000/Comp3104.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/101476000/Comp3104/issues"
+  },
+  "homepage": "https://github.com/101476000/Comp3104#readme"
+}
