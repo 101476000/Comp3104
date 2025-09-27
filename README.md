@@ -1,24 +1,41 @@
-# COMP3104 – Exercise 03 Starter
+# COMP3104 – Exercise 04 
 
-This starter gives you a minimal repository structure so you can complete Exercise 03 quickly using **GitHub Actions** (no credit card needed).
+[![Build Status](https://app.travis-ci.com/101476000/Comp3104.svg?branch=main)](https://app.travis-ci.com/github/101476000/Comp3104)
 
-## Files
-- `.github/workflows/ci.yml` – Minimal CI workflow that runs on every push.
-- `.travis.yml` – Placeholder if you decide to activate Travis CI instead.
-- `hello.txt` – Just a placeholder file so the repo isn't empty.
+This repository contains the setup for **Exercise 04 – Configuring Travis CI**.
 
-## Quick Steps (Windows PowerShell)
+---
+
+## Main Files
+- `.travis.yml` – Travis CI configuration file.
+- `.github/workflows/ci.yml` – GitHub Actions workflow (from previous exercise).
+- `package.json` – npm configuration file (scripts, test).
+- `build/index.html` – Test file for deployment.
+- `hello.txt` – Placeholder file.
+
+---
+
+## Quick Steps (Windows PowerShell / Git Bash)
 ```powershell
-# From inside your local clone of https://github.com/101476000/Comp3104
-Copy-Item -Recurse -Force .\comp3104_ex03_starter\* .
+# Clone the repository
+git clone https://github.com/101476000/Comp3104.git
+cd Comp3104
 
+# Initialize npm and create package.json
+npm init -y
+
+# Edit package.json to configure the test script
+# "test": "echo \"Warning: No tests created yet.\""
+
+# Create build folder and index.html
+mkdir build
+cd build
+echo "" > index.html
+cd ..
+
+# Add and push changes
 git add .
-git commit -m "Exercise 03: add CI workflow and placeholders"
-git push origin main   # or 'master' if that's your default
-```
+git commit -m "Exercise 04: Travis config + build folder"
+git push origin main
 
-## What to screenshot
-- **S1.jpg** – Your terminal showing the `git add`, `git commit`, and `git push` commands.
-- **S2.jpg** – The commit list page on GitHub showing your commit.
-- **S3.jpg** – The **Actions** tab with the CI run **(or)** your TravisCI dashboard, **and** your Azure for Students account page.
 ```
