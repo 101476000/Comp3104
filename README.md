@@ -1,6 +1,6 @@
 # COMP3104 – Exercise 04 
 
-[![Build Status](https://app.travis-ci.com/101476000/Comp3104.svg?branch=main)](https://app.travis-ci.com/github/101476000/Comp3104)
+[![Build Status](https://app.travis-ci.com/101476000/Comp3104.svg?token=izhFLuAuGA5szi2JBVzz&branch=main)](https://app.travis-ci.com/101476000/Comp3104)
 
 This repository contains the setup for **Exercise 04 – Configuring Travis CI**.
 
