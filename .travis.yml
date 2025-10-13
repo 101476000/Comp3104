@@ -1,6 +1,7 @@
 language: node_js
 node_js:
-  - "20"    
+  - "20"         # fija LTS; evita 'stable' (24)
+
 branches:
   only:
     - main
@@ -11,10 +12,8 @@ cache:
 install:
   - npm install  
 script:
-
   - if npm run | grep -q " build"; then npm run build; else echo "No build script; usaré build/ existente"; fi
-
-  - if [ -f build/index.html ]; then cp build/index.html build/404.html; else echo "No build/index.html para copiar"; fi
+  - if [ -f build/index.html ]; then cp build/index.html build/404.html; fi
 
 deploy:
   provider: pages
@@ -23,3 +22,4 @@ deploy:
   local_dir: build
   on:
     branch: main
+
