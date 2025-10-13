@@ -1,6 +1,16 @@
+os: linux
+dist: focal
+
 language: node_js
 node_js:
-  - "20"         # fija LTS; evita 'stable' (24)
+  - "20"                 # usaremos Node 20 sí o sí
+
+# Fuerza Node 20 aunque Travis arranque con "stable"
+before_install:
+  - nvm install 20
+  - nvm use 20
+  - node -v
+  - npm -v
 
 branches:
   only:
@@ -9,17 +19,14 @@ branches:
 cache:
   npm: true
 
-install:
-  - npm install  
+install: true
+
 script:
+  - npm install
   - if npm run | grep -q " build"; then npm run build; else echo "No build script; usaré build/ existente"; fi
   - if [ -f build/index.html ]; then cp build/index.html build/404.html; fi
 
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: $github_token
-  local_dir: build
-  on:
-    branch: main
-
+  github_toke_
