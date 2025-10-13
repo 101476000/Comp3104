@@ -2,6 +2,21 @@ language: node_js
 node_js:
   - "stable"
 
+branches:
+  only:
+    - main     # o 'master'
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm ci    
+
+script:
+  - npm run build
+  - cp build/index.html build/404.html
+
 deploy:
   provider: pages
   skip_cleanup: true
