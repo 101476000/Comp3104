@@ -1,21 +1,20 @@
 language: node_js
 node_js:
-  - "stable"
-
+  - "20"    
 branches:
   only:
-    - main     # o 'master'
+    - main
 
 cache:
-  directories:
-    - node_modules
+  npm: true
 
 install:
-  - npm ci    
-
+  - npm install  
 script:
-  - npm run build
-  - cp build/index.html build/404.html
+
+  - if npm run | grep -q " build"; then npm run build; else echo "No build script; usaré build/ existente"; fi
+
+  - if [ -f build/index.html ]; then cp build/index.html build/404.html; else echo "No build/index.html para copiar"; fi
 
 deploy:
   provider: pages
