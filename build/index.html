@@ -1,1 +1,135 @@
-echo "<h1>Hello Travis</h1>"
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Comp3104 • Student Profile — Carlos Figuera</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;        /* slate-900 */
+      --card: #111827;      /* gray-900 */
+      --text: #e5e7eb;      /* gray-200 */
+      --muted: #94a3b8;     /* slate-400 */
+      --accent: #38bdf8;    /* sky-400 */
+      --accent2: #a78bfa;   /* violet-400 */
+      --ok: #34d399;
+      --shadow: 0 10px 25px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    html,body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+      background:
+        radial-gradient(1200px 600px at -10% -20%, rgba(56,189,248,.15), transparent 60%),
+        radial-gradient(900px 500px at 110% 10%, rgba(167,139,250,.12), transparent 60%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 32px 20px 64px; }
+    header {
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      padding: 14px 18px; background: rgba(17,24,39,.7); border: 1px solid rgba(148,163,184,.18);
+      border-radius: 14px; box-shadow: var(--shadow); backdrop-filter: blur(6px);
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: conic-gradient(from 180deg at 50% 50%, var(--accent), var(--accent2));
+      box-shadow: 0 6px 18px rgba(56,189,248,.35);
+    }
+    nav a {
+      color: var(--muted); text-decoration: none; font-weight: 500; margin-left: 18px;
+    }
+    nav a:hover { color: var(--text); }
+    .hero {
+      margin-top: 32px;
+      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: center;
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(17,24,39,.95), rgba(17,24,39,.8));
+      border: 1px solid rgba(148,163,184,.18);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+    h1 { font-size: 40px; margin: 0 0 10px; letter-spacing: .3px; }
+    .tag { display: inline-block; padding: 6px 10px; border-radius: 999px; background: rgba(56,189,248,.15); color: var(--accent); font-weight: 600; font-size: 12px; letter-spacing: .5px; text-transform: uppercase; }
+    .muted { color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 22px; }
+    .pill {
+      background: rgba(2,6,23,.7); border: 1px dashed rgba(148,163,184,.22); border-radius: 12px; padding: 14px 16px;
+    }
+    .pill b { color: var(--text); }
+    .links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 16px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 14px; border-radius: 12px; font-weight: 600; text-decoration: none;
+      color: #0b1220; background: linear-gradient(90deg, var(--accent), var(--accent2)); border: 0;
+      box-shadow: 0 10px 24px rgba(56,189,248,.35); transition: transform .08s ease;
+    }
+    .btn.secondary {
+      background: transparent; color: var(--text); border: 1px solid rgba(148,163,184,.28);
+      box-shadow: none;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .list { margin: 16px 0 0 18px; }
+    footer { margin-top: 34px; text-align: center; color: var(--muted); font-size: 14px; }
+    @media (max-width: 920px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+      .links { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="tag">COMP3104 • GitHub Pages + CI</div>
+          <div class="muted">George Brown College</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#links">Links</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <h1 id="about">Carlos Figuera La Riva</h1>
+        <p class="muted" style="margin-top:-4px;">Student ID: <b>101476000</b></p>
+        <p style="margin-top:12px;">This site is deployed on <b>GitHub Pages</b> and demonstrates CI logs via <b>GitHub Actions</b> and deployment via <b>Travis</b>. It also includes a clean, responsive layout suitable as a student details page.</p>
+
+        <div class="grid">
+          <div class="pill"><b>Course:</b> COMP3104</div>
+          <div class="pill"><b>CI/CD:</b> Actions & Travis</div>
+          <div class="pill"><b>Runtime:</b> Node 20</div>
+        </div>
+
+        <div class="links" id="links">
+          <a class="btn" href="https://101476000.github.io/Comp3104/" target="_blank" rel="noopener">Open Live Site</a>
+          <a class="btn secondary" href="https://github.com/101476000/Comp3104" target="_blank" rel="noopener">View Repository</a>
+          <a class="btn secondary" href="https://app.travis-ci.com/github/101476000/Comp3104" target="_blank" rel="noopener">Travis Build</a>
+          <a class="btn secondary" href="https://github.com/101476000/Comp3104/actions" target="_blank" rel="noopener">Actions Logs</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-top:0;">What’s included</h3>
+        <ul class="list">
+          <li>Student details (name + ID) and project info.</li>
+          <li>Links to repo, CI logs and live page.</li>
+          <li>Responsive, accessible, modern UI.</li>
+          <li>Ready to be built and deployed to <code>gh-pages</code>.</li>
+        </ul>
+        <h3 style="margin-top:18px;">How to run locally</h3>
+        <pre class="muted" style="white-space:pre-wrap;background:rgba(2,6,23,.6);padding:12px;border-radius:12px;border:1px solid rgba(148,163,184,.25)
